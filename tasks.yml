@@ -1,0 +1,9 @@
+--- #my task section
+- hosts: webservers
+  become: yes
+  connection: ssh
+
+  tasks:  
+    - name: Installing httpd software in webservers
+      action: yum name=htt state=installed
+      ignore_errors: yes

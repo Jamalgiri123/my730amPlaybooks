@@ -1,0 +1,12 @@
+--- # install mysql software
+- hosts: all
+  become: yes
+  connection: ssh
+
+
+  tasks:
+    - name: installing mysql s/w into hosts 
+      yum:
+        name: mysql
+        state: present
+

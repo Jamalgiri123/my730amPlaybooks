@@ -1,0 +1,20 @@
+--- # my conditinals playbook
+- hosts: all
+  become: yes
+
+
+  tasks:
+    - name: Install httpd package
+      yum: 
+       name: httpd
+       state: installed
+   
+      when: ansible_os_family == "Redhat"
+
+    - name: start httpd service
+      service:
+        name: httpd
+        state: started
+      when: ansible_os_family == "RedHat"
+
+     

@@ -1,0 +1,13 @@
+--- # software installation
+- name: test playbook
+  hosts: all
+  user: ansible
+  connection: ssh
+  become: yes
+
+
+  tasks:
+    - name: install software into hosts
+      yum:
+        name: docker
+        state: installed

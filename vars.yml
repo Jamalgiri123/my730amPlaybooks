@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  user: ansible
+  connection: ssh
+
+  vars:
+    pkgname: java
+
+
+  tasks:
+    - name: install java s/w into webservers roup
+      action: yum name='{{pkgname}}' state=latest

@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+
+
+  tasks: 
+    - name: deleting httpd software
+      yum:
+        name: httpd
+        state: absent
+
+
+    - name: stopping the service
+      service:
+        name: httpd
+        state: stopped
+
+
